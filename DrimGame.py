@@ -13,7 +13,7 @@ os.environ["PYTHONIOENCODING"] = "utf-8"
 import warnings
 warnings.filterwarnings('ignore')
 
-import openpyxl
+
 import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
