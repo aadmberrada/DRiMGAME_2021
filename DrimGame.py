@@ -1008,7 +1008,7 @@ if bouton:
         st.write("La matrice PIT pour l'année", annee, "et le scénario Central est :")
         st.table(PIT_proj_central_2019)    
         st.write("La matrice PIT pour l'année", annee, "et le scénario Adverse est :")
-        st.table(PIT_proj_adverse_2018)
+        st.table(PIT_proj_adverse_2019)
         
     #2020
     if annee==2020 and choix=="Baseline":
