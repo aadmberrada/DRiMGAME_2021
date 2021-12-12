@@ -7,15 +7,15 @@ Created on Fri Dec 10 21:22:37 2021
 """
 
 
-#import plotly
+import os
+os.environ["PYTHONIOENCODING"] = "utf-8"
 import warnings
 warnings.filterwarnings('ignore')
+
 import streamlit as st
-import pandas as pd
-pd.options.display.float_format = "{:,.6f}".format
-#plt.style.use('dark_background')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+import pandas as pd
 
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
