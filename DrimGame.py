@@ -23,7 +23,7 @@ import plotly.graph_objects as go
 
 
 #-------------------- Data
-path = "/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/Données/"
+path = "/https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données/"
 ##Données de projection
 df = pd.read_excel(path+"scenarios_proj_propre.xlsx")
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
@@ -90,10 +90,11 @@ st.title("DRiM GAME")
 st.title("Challenge Data Science & Risque de crédit")
 col1, col2, col3, col4 = st.columns(4)
 
-col4.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/mosef3.png")
-col1.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/rci.png")
-col2.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/deloitte.png")
-col3.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/sas.png")
+lien = "https://github.com/aadmberrada/DRiMGAME_2021/"
+col4.image(lien+"mosef3.png")
+col1.image(lien+"rci.png")
+col2.image(lien+"deloitte.png")
+col3.image(lien+"sas.png")
 #--------------------
 
 
