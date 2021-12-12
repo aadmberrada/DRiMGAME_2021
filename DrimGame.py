@@ -26,7 +26,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 #-------------------- Data
-path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/data/"
+path = "https://raw.githubusercontent.com/aadmberrada/DRiMGAME_2021/master/data/"
 ##Données de projection
 
 df = pd.read_csv(path + "scenarios_proj_propre.csv", sep = ";")
