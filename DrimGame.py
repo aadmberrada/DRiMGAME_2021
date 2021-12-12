@@ -5,9 +5,11 @@ Created on Fri Dec 10 21:22:37 2021
 
 @author: Abdoul_Aziz_Berrada
 """
-
+import os
+import locale
+os.environ["PYTHONIOENCODING"] = "utf-8"
 import plotly
-#
+
 import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
@@ -19,12 +21,16 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 #import fsspec
 
 #-------------------- Data
-path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données/"
+
 ##Données de projection
+path = "https://github.com/aadmberrada/DRiMGAME_2021/blob/cfd55b4d3c14a01fb7640fe4c955bd3eb5848b9f/Donn%C3%A9es/"
 df = pd.read_excel(path+"scenarios_proj_propre.xlsx")
+
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
 df = df[["Date", "Baseline", "Central", "Adverse"]]
 
