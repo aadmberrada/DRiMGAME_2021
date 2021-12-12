@@ -5,9 +5,9 @@ Created on Fri Dec 10 21:22:37 2021
 
 @author: Abdoul_Aziz_Berrada
 """
-#pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org plotly --upgrade
+
 import plotly
-#pip install seaborn
+#
 import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
@@ -19,7 +19,6 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-
 
 
 
