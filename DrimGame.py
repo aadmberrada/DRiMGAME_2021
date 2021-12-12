@@ -6,7 +6,7 @@ Created on Fri Dec 10 21:22:37 2021
 @author: Abdoul_Aziz_Berrada
 """
 
-pip install plotly
+import plotly
 #pip install seaborn
 import warnings
 warnings.filterwarnings('ignore')
