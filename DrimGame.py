@@ -29,7 +29,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 path = "https://raw.githubusercontent.com/aadmberrada/DRiMGAME_2021/master/data/"
 ##Données de projection
 
-df = pd.read_csv(path + "scenarios_proj_propre.csv", sep = ";")
+df = pd.read_excel(path + "scenarios_proj_propre.xlsx")
 
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
 df = df[["Date", "Baseline", "Central", "Adverse"]]
@@ -55,23 +55,23 @@ Z_central_2020 = 1.308
 Z_adverse_2020 = 0.348
 
 ##Matrices PIT
-PIT_proj_baseline_2018 = pd.read_csv(path + "PIT_proj_baseline_2018.csv", sep = ";").iloc[:, 1:]
-PIT_proj_central_2018 = pd.read_csv(path + "PIT_proj_central_2018.csv", sep = ";").iloc[:, 1:]
-PIT_proj_adverse_2018 = pd.read_csv(path + "PIT_proj_adverse_2018.csv", sep = ";").iloc[:, 1:]
+PIT_proj_baseline_2018 = pd.read_excel(path + "PIT_proj_baseline_2018.xlsx").iloc[:, 1:]
+PIT_proj_central_2018 = pd.read_excel(path + "PIT_proj_central_2018.xlsx").iloc[:, 1:]
+PIT_proj_adverse_2018 = pd.read_excel(path + "PIT_proj_adverse_2018.xlsx").iloc[:, 1:]
 
-PIT_proj_baseline_2019 = pd.read_csv(path + "PIT_proj_baseline_2019.csv", sep = ";").iloc[:, 1:]
-PIT_proj_central_2019 = pd.read_csv(path + "PIT_proj_central_2019.csv", sep = ";").iloc[:, 1:]
-PIT_proj_adverse_2019 = pd.read_csv(path + "PIT_proj_adverse_2019.csv", sep = ";").iloc[:, 1:]
+PIT_proj_baseline_2019 = pd.read_excel(path + "PIT_proj_baseline_2019.xlsx").iloc[:, 1:]
+PIT_proj_central_2019 = pd.read_excel(path + "PIT_proj_central_2019.xlsx").iloc[:, 1:]
+PIT_proj_adverse_2019 = pd.read_excel(path + "PIT_proj_adverse_2019.xlsx").iloc[:, 1:]
 
-PIT_proj_baseline_2020 = pd.read_csv(path + "PIT_proj_baseline_2020.csv", sep = ";").iloc[:, 1:]
-PIT_proj_central_2020 = pd.read_csv(path + "PIT_proj_central_2020.csv", sep = ";").iloc[:, 1:]
-PIT_proj_adverse_2020 = pd.read_csv(path + "PIT_proj_adverse_2020.csv", sep = ";").iloc[:, 1:]
+PIT_proj_baseline_2020 = pd.read_excel(path + "PIT_proj_baseline_2020.xlsx").iloc[:, 1:]
+PIT_proj_central_2020 = pd.read_excel(path + "PIT_proj_central_2020.xlsx").iloc[:, 1:]
+PIT_proj_adverse_2020 = pd.read_excel(path + "PIT_proj_adverse_2020.xlsx").iloc[:, 1:]
 
 ##Passage défaut
-passage = pd.read_csv(path + "passage_defaut_classes_scenarios.csv", sep = ";")
-passage18 = pd.read_csv(path+  "passage_defaut_2018.csv", sep = ";")
-passage19 = pd.read_csv(path+  "passage_defaut_2019.csv", sep = ";")
-passage20 = pd.read_csv(path+  "passage_defaut_2020.csv", sep = ";")
+passage = pd.read_excel(path + "passage_defaut_classes_scenarios.xlsx")
+passage18 = pd.read_excel(path+  "passage_defaut_2018.xlsx")
+passage19 = pd.read_excel(path+  "passage_defaut_2019.xlsx")
+passage20 = pd.read_excel(path+  "passage_defaut_2020.xlsx")
 
 #c = sns.heatmap(PIT_proj_central_2018)
 #st.dataframe(c)
