@@ -91,8 +91,10 @@ def _color_red_or_green(val):
 #-------------------- Head
 
 ##---- Header
-st.title("DRiM GAME")
-st.title("Data Science & Risque de crédit")
+st.markdown("<h1 style='text-align: center; '> DRiM GAME </h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> Challenge Data Science & Risque de crédit</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> </h2>", unsafe_allow_html=True)
+#st.title("Data Science & Risque de crédit")
 col1, col2, col3, col4 = st.columns(4)
 
 col4.image(path + "mosef3.png")
@@ -106,11 +108,12 @@ col3.image(path + "sas.png")
 
 
 #-------------------- Sidebar
-st.sidebar.title("**MoSEF**")
+st.sidebar.markdown("<h1 style='text-align: center; color : blue'>MoSEF</h1>", unsafe_allow_html=True)
+#st.sidebar.title("**MoSEF**")
 st.sidebar.subheader("Abdoul A. Berrada - Morgane Caillosse")
 st.sidebar.subheader("Hugo Hamon - Amira Slimene")
-
-st.sidebar.title("Choix des paramètres")
+st.sidebar.markdown("<h1 style='text-align: center;'>Choix des paramètres</h1>", unsafe_allow_html=True)
+#st.sidebar.title("Choix des paramètres")
 annee = st.sidebar.selectbox("Choix de l'année", [2018, 2019, 2020])
 
 
@@ -118,14 +121,14 @@ annee = st.sidebar.selectbox("Choix de l'année", [2018, 2019, 2020])
 number = st.sidebar.number_input("Nombre de scénarios à afficher", 1, 3)
 
 if number == 1:
-    choix = st.sidebar.selectbox("Lequel?", ["Baseline", 'Central', "Adverse"])
+    choix = st.sidebar.selectbox("Lequel ?", ["Baseline", 'Central', "Adverse"])
 
 if number == 2:
-    choix = st.sidebar.selectbox("Lesquels?", ["Baseline & Central", "Baseline & Adverse", 'Adverse & Central'])
+    choix = st.sidebar.selectbox("Lesquels ?", ["Baseline & Central", "Baseline & Adverse", 'Adverse & Central'])
 
 if number == 3:
     choix = 'Baseline & Central & Adverse'
-    st.sidebar.write("Vous avez choisi de voir les 3 scénarios!")
+    st.sidebar.write("Vous avez choisi de voir les 3 scénarios !")
 
     
 bouton = st.sidebar.button("Voir les résultats")
@@ -139,8 +142,8 @@ bouton = st.sidebar.button("Voir les résultats")
 
 #-------------------- Corps
 st.write("Cette application vous permet d'afficher nos résultats de **projections** de façon dynamique.")
-st.write("Vous avez la possibilité de choisir **l'année** pour laquelle vous souhaitez observer les résultats, ainsi que le, ou les, **scénario(s)** souhaités.")
-st.write("Les résultats présents sont tout d'abord un graphique affichant **l'évolution du taux de défaut estimé** par le modèle économétrique de 2010 à 2017, puis l'évolution de celui-ci selon votre choix de scénario, sur les années 2018, 2019 et 2020.")
+st.write("Vous avez la possibilité de choisir **l'année** pour laquelle vous souhaitez observer les résultats, ainsi que le ou les, **scénario(s)** souhaité(s).")
+st.write("Les résultats présents sont tout d'abord un graphique affichant **l'évolution du taux de défaut estimé** par le modèle économétrique de 2010 à 2017, puis l'évolution de celui-ci selon votre choix de scénario sur les années 2018, 2019 et 2020.")
 st.write("Les facteurs Z reflétant la conjoncture macroéconomique sont ensuite fournis selon vos choix. De ceux-ci découlent la (ou les) **matrice(s) Point In Time (PIT)** projetée(s) en probabilités non cumulées.")
 st.write("Enfin, le dernier graphique affiche le **taux de passage en défaut à horizon 1 an**, selon la classe de risque au début de l'année sélectionnée, et selon votre choix de scénario(s).")
 st.info("Veuillez faire vos choix dans le menu à gauche puis appuyer sur **Voir les résultats.**")
@@ -253,7 +256,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -276,7 +279,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -298,7 +301,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -327,7 +330,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -356,7 +359,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -384,7 +387,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -421,7 +424,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -444,7 +447,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -467,7 +470,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -489,7 +492,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -518,7 +521,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -547,7 +550,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -575,7 +578,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -612,7 +615,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -634,7 +637,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -657,7 +660,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -679,7 +682,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -708,7 +711,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -737,7 +740,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -765,7 +768,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
@@ -802,7 +805,7 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque en début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
