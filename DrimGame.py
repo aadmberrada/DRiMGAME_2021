@@ -5,6 +5,10 @@ Created on Fri Dec 10 21:22:37 2021
 
 @author: Abdoul_Aziz_Berrada
 """
+import os
+import locale
+os.environ["PYTHONIOENCODING"] = "utf-8"
+scriptLocale=locale.setlocale(category=locale.LC_ALL, locale="en_GB.UTF-8")
 
 import plotly
 #
@@ -19,11 +23,10 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-
-
+#import fsspec
 
 #-------------------- Data
-path = "/https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données/"
+path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données/"
 ##Données de projection
 df = pd.read_excel(path+"scenarios_proj_propre.xlsx")
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
