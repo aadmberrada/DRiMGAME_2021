@@ -28,7 +28,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 #-------------------- Data
 path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/data/"
 ##Données de projection
-df = pd.read_excel(path+"scenarios_proj_propre.xlsx", engine='openpyxl')
+df = pd.read_excel(path+"scenarios_proj_propre.xlsx")
 
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
 df = df[["Date", "Baseline", "Central", "Adverse"]]
