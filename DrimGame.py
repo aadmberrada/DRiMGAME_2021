@@ -6,21 +6,20 @@ Created on Fri Dec 10 21:22:37 2021
 @author: Abdoul_Aziz_Berrada
 """
 
+
 import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
 import pandas as pd
-import numpy as np
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org matplotlib
-import matplotlib.pyplot as plt
+
 #plt.style.use('dark_background')
 st.set_option('deprecation.showPyplotGlobalUse', False)
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org plotly
-import plotly.express as px
+
+
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org seaborn
-import seaborn as sns
+
+
 
 
 #-------------------- Data
