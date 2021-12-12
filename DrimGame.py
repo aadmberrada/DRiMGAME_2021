@@ -115,7 +115,7 @@ annee = st.sidebar.selectbox("Choix de l'année", [2018, 2019, 2020])
 
 
 #scenario = st.sidebar.multiselect("Choix de scénario(s)", ["Baseline", 'Central', "Adverse"])
-number = st.sidebar.slider("Nombre de scénarios à afficher", 1, 3, 1)
+number = st.sidebar.number_input("Nombre de scénarios à afficher", 1, 3)
 
 if number == 1:
     choix = st.sidebar.selectbox("Lequel?", ["Baseline", 'Central', "Adverse"])
