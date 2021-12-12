@@ -236,6 +236,7 @@ if bouton:
     
     #-------------
     
+
     def _adv18(annee):
         
         base = passage18
@@ -257,7 +258,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figa = _adv18(annee)
+    figa_18 = _adv18(annee)
     
     def _cent18(annee):
     
@@ -280,7 +281,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figc = _cent18(annee)
+    figc_18 = _cent18(annee)
     
     def _base18(annee):
         base = passage18
@@ -302,7 +303,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figb = _base18(annee)
+    figb_18 = _base18(annee)
     
     def _centbase18(annee):
         base = passage18
@@ -330,7 +331,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figcb = _centbase18(annee)
+    figcb_18 = _centbase18(annee)
     
     def _advbase18(annee):
         
@@ -359,7 +360,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figab = _advbase18(annee)
+    figab_18 = _advbase18(annee)
     
     def _centadv18(annee):
         base = passage18
@@ -388,7 +389,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figca = _centadv18(annee)
+    figca_18 = _centadv18(annee)
     
     def _basecentadv18(annee):
         
@@ -424,7 +425,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figbca = _basecentadv18(annee)
+    figbca_18 = _basecentadv18(annee)
     
     
     def _adv19(annee):
@@ -448,7 +449,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figa = _adv19(annee)
+    figa_19 = _adv19(annee)
     
     def _cent19(annee):
     
@@ -471,7 +472,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figc = _cent19(annee)
+    figc_19 = _cent19(annee)
     
     def _base19(annee):
         base = passage19
@@ -493,7 +494,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figb = _base19(annee)
+    figb_19 = _base19(annee)
     
     def _centbase19(annee):
         base = passage19
@@ -521,7 +522,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figcb = _centbase19(annee)
+    figcb_19 = _centbase19(annee)
     
     def _advbase19(annee):
         
@@ -550,7 +551,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figab = _advbase19(annee)
+    figab_19 = _advbase19(annee)
     
     def _centadv19(annee):
         base = passage19
@@ -579,7 +580,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figca = _centadv19(annee)
+    figca_19 = _centadv19(annee)
     
     def _basecentadv19(annee):
         
@@ -615,7 +616,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figbca = _basecentadv19(annee)
+    figbca_19 = _basecentadv19(annee)
     
     def _adv20(annee):
         
@@ -638,7 +639,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figa = _adv20(annee)
+    figa_20 = _adv20(annee)
     
     def _cent20(annee):
     
@@ -661,7 +662,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figc = _cent20(annee)
+    figc_20 = _cent20(annee)
     
     def _base20(annee):
         base = passage20
@@ -683,7 +684,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figb = _base20(annee)
+    figb_20 = _base20(annee)
     
     def _centbase20(annee):
         base = passage20
@@ -711,7 +712,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figcb = _centbase20(annee)
+    figcb_20 = _centbase20(annee)
     
     def _advbase20(annee):
         
@@ -740,7 +741,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figab = _advbase20(annee)
+    figab_20 = _advbase20(annee)
     
     def _centadv20(annee):
         base = passage20
@@ -769,7 +770,7 @@ if bouton:
         fig1 = dict(data = data2, layout = layout)
         return fig1
     
-    figca = _centadv20(annee)
+    figca_20 = _centadv20(annee)
     
     def _basecentadv20(annee):
         
@@ -805,7 +806,7 @@ if bouton:
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
-    figbca = _basecentadv20(annee)
+    figbca_20 = _basecentadv20(annee)
     
     
     
@@ -1051,62 +1052,48 @@ if bouton:
     
     ##Barcharts
     if annee==2018 and choix=="Adverse":
-        st.plotly_chart(figa)
+        st.plotly_chart(figa_18)
     if annee==2018 and choix=="Baseline":
-        st.plotly_chart(figb)
+        st.plotly_chart(figb_18)
     if annee==2018 and choix=="Central":
-        st.plotly_chart(figc)
+        st.plotly_chart(figc_18)
     if annee==2018 and choix=="Baseline & Central":
-        st.plotly_chart(figcb)
+        st.plotly_chart(figcb_18)
     if annee==2018 and choix=="Adverse & Central":
-        st.plotly_chart(figca)
+        st.plotly_chart(figca_18)
     if annee==2018 and choix=="Baseline & Adverse":
-        st.plotly_chart(figab)
+        st.plotly_chart(figab_18)
     if annee==2018 and choix =='Baseline & Central & Adverse':
-        st.plotly_chart(figbca)
+        st.plotly_chart(figbca_18)
     
     
     if annee==2019 and choix=="Adverse":
-        st.plotly_chart(figa)
+        st.plotly_chart(figa_19)
     if annee==2019 and choix=="Baseline":
-        st.plotly_chart(figb)
+        st.plotly_chart(figb_19)
     if annee==2019 and choix=="Central":
-        st.plotly_chart(figc)
+        st.plotly_chart(figc_19)
     if annee==2019 and choix=="Baseline & Central":
-        st.plotly_chart(figcb)
+        st.plotly_chart(figcb_19)
     if annee==2019 and choix=="Adverse & Central":
-        st.plotly_chart(figca)
+        st.plotly_chart(figca_19)
     if annee==2019 and choix=="Baseline & Adverse":
-        st.plotly_chart(figab)
+        st.plotly_chart(figab_19)
     if annee==2019 and choix =='Baseline & Central & Adverse':
-        st.plotly_chart(figbca)
+        st.plotly_chart(figbca_19)
     
     if annee==2020 and choix=="Adverse":
-        st.plotly_chart(figa)
+        st.plotly_chart(figa_20)
     if annee==2020 and choix=="Baseline":
-        st.plotly_chart(figb)
+        st.plotly_chart(figb_20)
     if annee==2020 and choix=="Central":
-        st.plotly_chart(figc)
+        st.plotly_chart(figc_20)
     if annee==2020 and choix=="Baseline & Central":
-        st.plotly_chart(figcb)
+        st.plotly_chart(figcb_20)
     if annee==2020 and choix=="Adverse & Central":
-        st.plotly_chart(figca)
+        st.plotly_chart(figca_20)
     if annee==2020 and choix=="Baseline & Adverse":
-        st.plotly_chart(figab)
+        st.plotly_chart(figab_20)
     if annee==2020 and choix =='Baseline & Central & Adverse':
-        st.plotly_chart(figbca)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        st.plotly_chart(figbca_20)
+           
