@@ -8,6 +8,7 @@ Created on Fri Dec 10 21:22:37 2021
 
 
 import os
+import locale
 os.environ["PYTHONIOENCODING"] = "utf-8"
 import warnings
 warnings.filterwarnings('ignore')
@@ -20,6 +21,8 @@ import pandas as pd
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 #-------------------- Data
