@@ -6,7 +6,8 @@ Created on Fri Dec 10 21:22:37 2021
 @author: Abdoul_Aziz_Berrada
 """
 
-
+pip install plotly
+#pip install seaborn
 import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
