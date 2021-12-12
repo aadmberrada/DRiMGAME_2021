@@ -23,7 +23,7 @@ import plotly.graph_objects as go
 
 
 #-------------------- Data
-path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données"
+path = "https://github.com/aadmberrada/DRiMGAME_2021/tree/master/Données/"
 ##Données de projection
 df = pd.read_excel(path+"scenarios_proj_propre.xlsx")
 df.rename(columns = {'DR_baseline':'Baseline', 'DR_central':'Central', 'DR_adverse':'Adverse'}, inplace = True)
