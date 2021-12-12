@@ -5,10 +5,6 @@ Created on Fri Dec 10 21:22:37 2021
 
 @author: Abdoul_Aziz_Berrada
 """
-import os
-import locale
-os.environ["PYTHONIOENCODING"] = "utf-8"
-scriptLocale=locale.setlocale(category=locale.LC_ALL, locale="en_GB.UTF-8")
 
 import plotly
 #
