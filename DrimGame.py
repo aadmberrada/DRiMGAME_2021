@@ -108,7 +108,7 @@ col3.image(path + "sas.png")
 
 
 #-------------------- Sidebar
-st.sidebar.markdown("<h1 style='text-align: center; color : blue'>MoSEF</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: center; color : blue'>MoSEF 2</h1>", unsafe_allow_html=True)
 #st.sidebar.title("**MoSEF**")
 st.sidebar.subheader("Abdoul A. Berrada - Morgane Caillosse")
 st.sidebar.subheader("Hugo Hamon - Amira Slimene")
