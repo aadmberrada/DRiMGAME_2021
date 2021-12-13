@@ -97,7 +97,7 @@ st.markdown("<h2 style='text-align: center;'> </h2>", unsafe_allow_html=True)
 #st.title("Data Science & Risque de crédit")
 col1, col2, col3, col4 = st.columns([1, 1, 1, 0.6])
 
-col4.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/mosef3.png")
+col4.image(path + "mosef3.png")
 col3.image(path + "rci.png")
 col2.image(path + "deloitte.png")
 col1.image(path + "sas.png")
