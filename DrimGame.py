@@ -95,12 +95,12 @@ st.markdown("<h1 style='text-align: center; '> DRiM GAME </h1>", unsafe_allow_ht
 st.markdown("<h2 style='text-align: center;'> Challenge Data Science & Risque de crédit</h2>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'> </h2>", unsafe_allow_html=True)
 #st.title("Data Science & Risque de crédit")
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4 = st.columns([1, 1, 1, 0.6])
 
-col4.image(path + "mosef3.png")
-col1.image(path + "rci.png")
+col4.image("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/mosef3.png")
+col3.image(path + "rci.png")
 col2.image(path + "deloitte.png")
-col3.image(path + "sas.png")
+col1.image(path + "sas.png")
 #--------------------
 
 
@@ -141,8 +141,8 @@ bouton = st.sidebar.button("Voir les résultats")
 
 
 #-------------------- Corps
-st.write("Cette application vous permet d'afficher nos résultats de **projections** de façon dynamique.")
-st.write("Vous avez la possibilité de choisir **l'année** pour laquelle vous souhaitez observer les résultats, ainsi que le ou les, **scénario(s)** souhaité(s).")
+st.write("Cette application vous fournit une solution **clé en main** afin d'afficher nos résultats de **projections** de façon dynamique et **automatisée.**")
+st.write("Vous avez la possibilité de choisir **l'année** pour laquelle vous souhaitez observer les résultats, ainsi que le ou les **scénario(s)** souhaité(s).")
 st.write("Les résultats présents sont tout d'abord un graphique affichant **l'évolution du taux de défaut estimé** par le modèle économétrique de 2010 à 2017, puis l'évolution de celui-ci selon votre choix de scénario sur les années 2018, 2019 et 2020.")
 st.write("Les facteurs Z reflétant la conjoncture macroéconomique sont ensuite fournis selon vos choix. De ceux-ci découlent la (ou les) **matrice(s) Point In Time (PIT)** projetée(s) en probabilités non cumulées.")
 st.write("Enfin, le dernier graphique affiche le **taux de passage en défaut à horizon 1 an**, selon la classe de risque au début de l'année sélectionnée, et selon votre choix de scénario(s).")
