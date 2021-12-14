@@ -73,8 +73,11 @@ passage18 = pd.read_excel(path+  "passage_defaut_2018.xlsx", engine = "openpyxl"
 passage19 = pd.read_excel(path+  "passage_defaut_2019.xlsx", engine = "openpyxl")
 passage20 = pd.read_excel(path+  "passage_defaut_2020.xlsx", engine = "openpyxl")
 
-#c = sns.heatmap(PIT_proj_central_2018)
-#st.dataframe(c)
+##Intervalles de confiance
+df_adv = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_adverse_concat_IC_f.csv", sep = ";")
+df_cent = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_central_concat_IC_f.csv", sep = ";")
+df_bas = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_baseline_concat_IC_f.csv", sep = ";")
+
 
 def color(val, s):
     color = 'green' if val > s else 'red'
@@ -130,7 +133,7 @@ if number == 3:
     choix = 'Baseline & Central & Adverse'
     st.sidebar.write("Vous avez choisi de voir les 3 scénarios !")
 
-    
+confiance = st.sidebar.checkbox('Afficher les intervalles de confiance')
 bouton = st.sidebar.button("Voir les résultats")
 
 #-------------------- 
@@ -805,22 +808,186 @@ if bouton:
                           width=840,
                           height=550,
                           title = 'Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 1, zeroline= True),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig1 = dict(data = data2, layout = layout)
         return fig1
     figbca_20 = _basecentadv20(annee)
     
+ 
+    ## Intervalles de confiance
+    def _icadv():
+        
+        df = df_adv
+        fig = make_subplots(specs=[[{"secondary_y": True}]])
+        
+        trace1 = go.Scatter(
+        x = df["Date"],
+        y = df['P10'],
+        mode = "lines",
+        name = "IC_10",
+        marker = dict(color = 'orange'))
+        
+        trace2 = go.Scatter(
+        x = df["Date"],
+        y = df["DR"],
+        #mode ="lines+markers"
+        mode ="lines",
+        name = "DR projeté",
+        marker = dict(color = 'green'))
+        
+        trace3 = go.Scatter(
+        x = df["Date"],
+        y = df["P90"],
+        mode = "lines",
+        name = "IC_90",
+        marker = dict(color = 'red'))
+        
+        data2 = [trace1,trace2,trace3]
+        fig.add_trace(trace1, secondary_y=False)
+        fig.add_trace(trace2, secondary_y=False)
+        fig.add_trace(trace3, secondary_y=False)
     
+
+        fig.update_xaxes(showline=True, linewidth=2, linecolor='black', gridcolor='Red')
+        fig.update_yaxes(range = [0, 6], showline=True, linewidth=2, linecolor='black', gridcolor='black');
+        #data = [trace1, trace2,trace3]
+        layout = dict(autosize=False,
+                          width=840,
+                          height=550,
+                          title = 'Intervalles de confiance  du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+        yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
+        fig = dict(data = data2, layout = layout)
+        
+        return fig
     
+    fig_icadv = _icadv()    
+    
+        
+    def _icbas():
+        
+        df = df_bas
+        fig = make_subplots(specs=[[{"secondary_y": True}]])
+        
+        trace1 = go.Scatter(
+        x = df["Date"],
+        y = df['P10'],
+        mode = "lines",
+        name = "IC_10",
+        marker = dict(color = 'orange'))
+        
+        trace2 = go.Scatter(
+        x = df["Date"],
+        y = df["DR"],
+        #mode ="lines+markers"
+        mode ="lines",
+        name = "DR projeté",
+        marker = dict(color = 'green'))
+        
+        trace3 = go.Scatter(
+        x = df["Date"],
+        y = df["P90"],
+        mode = "lines",
+        name = "IC_90",
+        marker = dict(color = 'red'))
+        
+        data2 = [trace1,trace2,trace3]
+        fig.add_trace(trace1, secondary_y=False)
+        fig.add_trace(trace2, secondary_y=False)
+        fig.add_trace(trace3, secondary_y=False)
+    
+
+        fig.update_xaxes(showline=True, linewidth=2, linecolor='black', gridcolor='Red')
+        fig.update_yaxes(range = [0, 6], showline=True, linewidth=2, linecolor='black', gridcolor='black');
+        #data = [trace1, trace2,trace3]
+        layout = dict(autosize=False,
+                          width=840,
+                          height=550,
+                          title = 'Intervalles de confiance du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+        yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
+        fig = dict(data = data2, layout = layout)
+        
+        return fig
+    
+    fig_icbas = _icbas() 
+    
+        
+    def _iccent():
+        
+        df = df_cent
+        fig = make_subplots(specs=[[{"secondary_y": True}]])
+        
+        trace1 = go.Scatter(
+        x = df["Date"],
+        y = df['P10'],
+        mode = "lines",
+        name = "IC_10",
+        marker = dict(color = 'orange'))
+        
+        trace2 = go.Scatter(
+        x = df["Date"],
+        y = df["DR"],
+        #mode ="lines+markers"
+        mode ="lines",
+        name = "DR projeté",
+        marker = dict(color = 'green'))
+        
+        trace3 = go.Scatter(
+        x = df["Date"],
+        y = df["P90"],
+        mode = "lines",
+        name = "IC_90",
+        marker = dict(color = 'red'))
+        
+        data2 = [trace1,trace2,trace3]
+        fig.add_trace(trace1, secondary_y=False)
+        fig.add_trace(trace2, secondary_y=False)
+        fig.add_trace(trace3, secondary_y=False)
+    
+
+        fig.update_xaxes(showline=True, linewidth=2, linecolor='black', gridcolor='Red')
+        fig.update_yaxes(range = [0, 6], showline=True, linewidth=2, linecolor='black', gridcolor='black');
+        #data = [trace1, trace2,trace3]
+        layout = dict(autosize=False,
+                          width=840,
+                          height=550,
+                          title = 'Intervalles de confiance du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
+        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+        yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
+        fig = dict(data = data2, layout = layout)
+        
+        return fig
+    
+    fig_iccent = _iccent() 
+    
+if confiance and bouton :
+    
+    st.subheader("Intervalles de confiance")
+    if choix =="Adverse":
+        st.plotly_chart(fig_icadv)
+    if choix =="Central":
+        st.plotly_chart(fig_iccent)
+    if choix =="Baseline":
+        st.plotly_chart(fig_icbas)
+    if choix =="Baseline & Central":
+        st.plotly_chart(fig_icbas)      
+        st.plotly_chart(fig_iccent)       
+    if choix =="Baseline & Adverse":
+        st.plotly_chart(fig_icbas)
+        st.plotly_chart(fig_icadv)
+    if choix =='Adverse & Central':
+        st.plotly_chart(fig_icadv)
+        st.plotly_chart(fig_iccent)
+    if choix =='Baseline & Central & Adverse':
+        st.plotly_chart(fig_icbas)
+        st.plotly_chart(fig_iccent)
+        st.plotly_chart(fig_icadv)
     #---------------
     
-    
-    
-    
-    
-    
-    
+if bouton:
+
     ##---- Z_projeté
     if number == 1:
         st.subheader("Z_projetés")
