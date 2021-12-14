@@ -825,9 +825,9 @@ if bouton:
         trace1 = go.Scatter(
         x = df["Date"],
         y = df['P10'],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_10",
-        marker = dict(color = 'orange'))
+        marker = dict(color = 'black'))
         
         trace2 = go.Scatter(
         x = df["Date"],
@@ -835,14 +835,14 @@ if bouton:
         #mode ="lines+markers"
         mode ="lines",
         name = "DR projeté",
-        marker = dict(color = 'green'))
+        marker = dict(color = 'red'))
         
         trace3 = go.Scatter(
         x = df["Date"],
         y = df["P90"],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_90",
-        marker = dict(color = 'red'))
+        marker = dict(color = 'black'))
         
         data2 = [trace1,trace2,trace3]
         fig.add_trace(trace1, secondary_y=False)
@@ -856,8 +856,8 @@ if bouton:
         layout = dict(autosize=False,
                           width=840,
                           height=550,
-                          title = 'Intervalles de confiance  du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+                          title = 'Intervalles de confiance du taux de passage en défaut à 1 an en fonction des classes de risque',
+        xaxis= dict(title= "Classes de risque au début de l'année ",ticklen= 5, dtick = 2,zeroline= True, tickangle=45),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig = dict(data = data2, layout = layout)
         
@@ -874,9 +874,9 @@ if bouton:
         trace1 = go.Scatter(
         x = df["Date"],
         y = df['P10'],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_10",
-        marker = dict(color = 'orange'))
+        marker = dict(color = 'black'))
         
         trace2 = go.Scatter(
         x = df["Date"],
@@ -889,9 +889,9 @@ if bouton:
         trace3 = go.Scatter(
         x = df["Date"],
         y = df["P90"],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_90",
-        marker = dict(color = 'red'))
+        marker = dict(color = 'black'))
         
         data2 = [trace1,trace2,trace3]
         fig.add_trace(trace1, secondary_y=False)
@@ -905,8 +905,8 @@ if bouton:
         layout = dict(autosize=False,
                           width=840,
                           height=550,
-                          title = 'Intervalles de confiance du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+                          title = 'Intervalles de confiance du taux de passage en défaut à 1 an en fonction des classes de risque',
+        xaxis= dict(title= "Classes de risque au début de l'année ",ticklen= 5, dtick = 2,zeroline= True, tickangle=45),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig = dict(data = data2, layout = layout)
         
@@ -923,24 +923,24 @@ if bouton:
         trace1 = go.Scatter(
         x = df["Date"],
         y = df['P10'],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_10",
-        marker = dict(color = 'orange'))
+        marker = dict(color = 'black'))
         
         trace2 = go.Scatter(
         x = df["Date"],
         y = df["DR"],
         #mode ="lines+markers"
         mode ="lines",
-        name = "DR projeté",
-        marker = dict(color = 'green'))
+        name = "Taux de défaut projeté",
+        marker = dict(color = 'orange'))
         
         trace3 = go.Scatter(
         x = df["Date"],
         y = df["P90"],
-        mode = "lines",
+        mode = 'lines+markers',
         name = "IC_90",
-        marker = dict(color = 'red'))
+        marker = dict(color = 'black'))
         
         data2 = [trace1,trace2,trace3]
         fig.add_trace(trace1, secondary_y=False)
@@ -954,8 +954,8 @@ if bouton:
         layout = dict(autosize=False,
                           width=840,
                           height=550,
-                          title = 'Intervalles de confiance du Taux de passage en défaut à 1 an en fonction des classes de risque en ' +str(annee),
-        xaxis= dict(title= "Classes de risque au début de l'année " + str(annee),ticklen= 5, dtick = 2, zeroline= True),
+                          title = 'Intervalles de confiance du taux de passage en défaut à 1 an en fonction des classes de risque',
+        xaxis= dict(title= "Classes de risque au début de l'année ",ticklen= 5, dtick = 2,zeroline= True, tickangle=45),
         yaxis= dict(title= 'Taux de passage en défaut en %',ticklen= 5, zeroline= True), plot_bgcolor='#D0CECE')
         fig = dict(data = data2, layout = layout)
         
@@ -973,8 +973,8 @@ if confiance and bouton :
     if choix =="Baseline":
         st.plotly_chart(fig_icbas)
     if choix =="Baseline & Central":
-        st.plotly_chart(fig_icbas)      
-        st.plotly_chart(fig_iccent)       
+        st.plotly_chart(fig_icbas)
+        st.plotly_chart(fig_iccent)    
     if choix =="Baseline & Adverse":
         st.plotly_chart(fig_icbas)
         st.plotly_chart(fig_icadv)
@@ -983,7 +983,7 @@ if confiance and bouton :
         st.plotly_chart(fig_iccent)
     if choix =='Baseline & Central & Adverse':
         st.plotly_chart(fig_icbas)
-        st.plotly_chart(fig_iccent)
+        st.plotly_chart(fig_iccent) 
         st.plotly_chart(fig_icadv)
     #---------------
     
