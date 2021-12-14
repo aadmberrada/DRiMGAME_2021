@@ -74,9 +74,10 @@ passage19 = pd.read_excel(path+  "passage_defaut_2019.xlsx", engine = "openpyxl"
 passage20 = pd.read_excel(path+  "passage_defaut_2020.xlsx", engine = "openpyxl")
 
 ##Intervalles de confiance
-df_adv = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_adverse_concat_IC_f.csv", sep = ";")
-df_cent = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_central_concat_IC_f.csv", sep = ";")
-df_bas = pd.read_csv("/Users/Abdoul_Aziz_Berrada/Documents/M2_MOSEF/3_DrimChallenge/DRiMGAME_2021/data/proj_baseline_concat_IC_f.csv", sep = ";")
+#https://raw.githubusercontent.com/aadmberrada/DRiMGAME_2021/master/data/proj_central_concat_IC_f.csv
+df_adv = pd.read_csv(path + "proj_adverse_concat_IC_f.csv", sep = ";")
+df_cent = pd.read_csv(path + "proj_central_concat_IC_f.csv", sep = ";")
+df_bas = pd.read_csv(path + "/proj_baseline_concat_IC_f.csv", sep = ";")
 
 
 def color(val, s):
