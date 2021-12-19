@@ -13,7 +13,6 @@ os.environ["PYTHONIOENCODING"] = "utf-8"
 import warnings
 warnings.filterwarnings('ignore')
 import matplotlib
-#pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org  openpyxl
 import streamlit as st
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
